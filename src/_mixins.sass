@@ -10,7 +10,6 @@
 // .mustart-gradient-{name}-text-dark-flip
 // .mustart-gradient-{name}-text-light
 // .mustart-gradient-{name}-text-light-flip
-
 =mustart-gradient($a-color, $b-color, $name)
   $a-color-dark: darken($a-color, $gradient-dark-percentage)
   $a-color-light: lighten($a-color, $gradient-light-percentage)
@@ -47,3 +46,10 @@
 
     &-text, &-text-flip, &-text-dark, &-text-dark-flip, &-text-light, &-text-light-flip
       @extend .#{$gradient-class-prefix}-text
+
+
+=mustart-gradients
+  .#{$gradient-class-prefix}
+    &-text
+      +background-clip(text)
+      -webkit-text-fill-color: transparent
