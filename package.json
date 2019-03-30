@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/depemu/mustart-gradients/issues"
   },
-  "homepage": "https://github.com/depemu/mustart-gradients#readme"
+  "homepage": "https://github.com/depemu/mustart-gradients#readme",
+  "devDependencies": {
+    "compass-mixins": "^0.12.10"
+  }
 }
