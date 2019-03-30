@@ -12,42 +12,38 @@
 // .mustart-gradient-{name}-text-light-flip
 
 =mustart-gradient($a-color, $b-color, $name)
-  .#{$gradient-class-prefix}-#{$name}
-    $a-color-dark: darken($a-color, $gradient-dark-percentage)
-    $a-color-light: lighten($a-color, $gradient-light-percentage)
-    $b-color-dark: darken($b-color, $gradient-dark-percentage)
-    $b-color-light: lighten($b-color, $gradient-light-percentage)
+  $a-color-dark: darken($a-color, $gradient-dark-percentage)
+  $a-color-light: lighten($a-color, $gradient-light-percentage)
+  $b-color-dark: darken($b-color, $gradient-dark-percentage)
+  $b-color-light: lighten($b-color, $gradient-light-percentage)
 
-    background: $a-color
+  .#{$gradient-class-prefix}-#{$name}, .#{$gradient-class-prefix}-#{$name}-text
     +background-image(linear-gradient(to left, $a-color, $b-color))
+
+  .#{$gradient-class-prefix}-#{$name}
+    background: $a-color
     &-flip
       background: $b-color
+    &-flip, &-text-flip
       +background-image(linear-gradient(to left, $b-color, $a-color))
 
     &-dark
       background: $a-color-dark
-      +background-image(linear-gradient(to left, $a-color-dark, $b-color-dark))
       &-flip
         background: $b-color-dark
+    &-dark, &-text-dark
+      +background-image(linear-gradient(to left, $a-color-dark, $b-color-dark))
+      &-flip
         +background-image(linear-gradient(to left, $b-color-dark, $a-color-dark))
+
     &-light
       background: $a-color-light
-      +background-image(linear-gradient(to left, $a-color-light, $a-color-light))
       &-flip
         background: $b-color-light
+    &-light, &-text-light
+      +background-image(linear-gradient(to left, $a-color-light, $b-color-light))
+      &-flip
         +background-image(linear-gradient(to left, $b-color-light, $a-color-light))
 
-    &-text
-      @extend .#{$gradient-class-prefix}-#{$name}
-      &-flip
-        @extend .#{$gradient-class-prefix}-#{$name}-flip
-      &-dark
-        @extend .#{$gradient-class-prefix}-#{$name}-dark
-        &-flip
-          @extend .#{$gradient-class-prefix}-#{$name}-dark-flip
-      &-light
-        @extend .#{$gradient-class-prefix}-#{$name}-light
-        &-flip
-          @extend .#{$gradient-class-prefix}-#{$name}-light-flip
     &-text, &-text-flip, &-text-dark, &-text-dark-flip, &-text-light, &-text-light-flip
       @extend .#{$gradient-class-prefix}-text
