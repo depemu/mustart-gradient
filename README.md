@@ -1,2 +1,3 @@
 # Mustart Gradients
-Gradients sass mixins
+
+Sass mixins for gradients
