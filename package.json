@@ -1,6 +1,6 @@
 {
   "name": "mustart-gradients",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sass mixins for gradients",
   "main": "index.js",
   "scripts": {
