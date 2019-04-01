@@ -17,32 +17,44 @@
   $b-color-light: lighten($b-color, $gradient-light-percentage)
 
   .#{$gradient-class-prefix}-#{$name}, .#{$gradient-class-prefix}-#{$name}-text
-    +background-image(linear-gradient(to left, $a-color, $b-color))
+    +background-image(linear-gradient(to right, $a-color, $b-color))
 
   .#{$gradient-class-prefix}-#{$name}
     background: $a-color
+    &-text
+      background-color: $a-color
+      &-flip
+        background-color: $b-color
+      &-dark
+        background-color: $a-color-dark
+        &-flip
+          background-color: $b-color-dark
+      &-light
+        background-color: $a-color-light
+        &-flip
+          background-color: $b-color-light
     &-flip
       background: $b-color
     &-flip, &-text-flip
-      +background-image(linear-gradient(to left, $b-color, $a-color))
+      +background-image(linear-gradient(to right, $b-color, $a-color))
 
     &-dark
       background: $a-color-dark
       &-flip
         background: $b-color-dark
     &-dark, &-text-dark
-      +background-image(linear-gradient(to left, $a-color-dark, $b-color-dark))
+      +background-image(linear-gradient(to right, $a-color-dark, $b-color-dark))
       &-flip
-        +background-image(linear-gradient(to left, $b-color-dark, $a-color-dark))
+        +background-image(linear-gradient(to right, $b-color-dark, $a-color-dark))
 
     &-light
       background: $a-color-light
       &-flip
         background: $b-color-light
     &-light, &-text-light
-      +background-image(linear-gradient(to left, $a-color-light, $b-color-light))
+      +background-image(linear-gradient(to right, $a-color-light, $b-color-light))
       &-flip
-        +background-image(linear-gradient(to left, $b-color-light, $a-color-light))
+        +background-image(linear-gradient(to right, $b-color-light, $a-color-light))
 
     &-text, &-text-flip, &-text-dark, &-text-dark-flip, &-text-light, &-text-light-flip
       @extend .#{$gradient-class-prefix}-text
