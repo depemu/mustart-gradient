@@ -20,7 +20,7 @@
     +background-image(linear-gradient(to right, $a-color, $b-color))
 
   .#{$gradient-class-prefix}-#{$name}
-    background: $a-color
+    background-color: $a-color
     &-text
       background-color: $a-color
       &-flip
@@ -34,23 +34,23 @@
         &-flip
           background-color: $b-color-light
     &-flip
-      background: $b-color
+      background-color: $b-color
     &-flip, &-text-flip
       +background-image(linear-gradient(to right, $b-color, $a-color))
 
     &-dark
-      background: $a-color-dark
+      background-color: $a-color-dark
       &-flip
-        background: $b-color-dark
+        background-color: $b-color-dark
     &-dark, &-text-dark
       +background-image(linear-gradient(to right, $a-color-dark, $b-color-dark))
       &-flip
         +background-image(linear-gradient(to right, $b-color-dark, $a-color-dark))
 
     &-light
-      background: $a-color-light
+      background-color: $a-color-light
       &-flip
-        background: $b-color-light
+        background-color: $b-color-light
     &-light, &-text-light
       +background-image(linear-gradient(to right, $a-color-light, $b-color-light))
       &-flip
