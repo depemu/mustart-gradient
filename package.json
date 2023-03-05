@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/depemu/mustart-gradients#readme",
   "devDependencies": {
-    "compass-mixins": "^0.12.10"
+    "compass-mixins": "0.12.12"
   }
 }
